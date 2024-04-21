@@ -1,0 +1,66 @@
+:root{
+    --primary-color:#EB0045;
+    --secondary-color:#FFFFFF;
+    --grey-color:#AAAAAA;
+    --bg-color-disabled:#EEEEEE;
+}
+
+.toggle{
+    display: flex;
+    margin: 2em;
+}
+
+#toggle-0{
+   display: none;
+}
+.toggle-label{
+    display: flex;
+    width: 90px;
+    padding: .3em;
+    font-size: 1.2em;
+    border: var(--grey-color) solid 1px;
+    position: relative;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: bolder;
+    border-radius:50px ;
+}
+
+.toggle-cb:checked ~ .toggle-label{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: all 0.2s ease-in;
+}
+
+.toggle-cb ~ .toggle-label{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.2s ease-in;
+}
+
+.toggle-cb:checked ~ .toggle-label .toggle-inner::after{
+    content: 'YES';
+    transition: all 0.2s ease-in;
+}
+
+.toggle-cb ~ .toggle-label .toggle-inner::after{
+    content: 'NO';
+    transition: all 0.2s ease-in;
+}
+
+.toggle-switch{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-color: var(--secondary-color);
+    border: solid 2px var(--grey-color);
+    border-radius: 50%;
+    top: -24%;
+    left: -30%;
+    transition: all 0.2s ease-in;
+}
+
+.toggle-cb:checked ~ .toggle-label .toggle-switch{
+    left:calc(100% - 30%);
+    transition: all 0.2s ease-in;
+}
